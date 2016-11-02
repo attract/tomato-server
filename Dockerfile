@@ -6,4 +6,5 @@ RUN apk upgrade --update && apk add supervisor nodejs bash git make g++ openssl 
 php5-pdo_sqlite php5-mcrypt php5-ctype php5-xml php5-pcntl php5-exif php5-gd php5-zip && \
 rm -rf /var/cache/apk/* && \
 npm install npm@latest -g && \
-npm install --global gulp
+npm install --global gulp && \
+composer global require "hirak/prestissimo:^0.3"
