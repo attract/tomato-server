@@ -1,10 +1,12 @@
-FROM attractgrouphub/alpine-php5-composer-nginx
+FROM attractgrouphub/alpine-php7-nginx-composer:2.0
 
 MAINTAINER Amondar
 
-RUN apk upgrade --update && apk add supervisor nodejs bash git make g++ openssl php5-fpm php5-mysql php5-pdo_mysql \
-php5-pdo_sqlite php5-mcrypt php5-ctype php5-xml php5-xmlreader php5-pcntl php5-exif php5-gd php5-zip && \
-rm -rf /var/cache/apk/* && \
-npm install npm@latest -g && \
-npm install --global gulp && \
-composer global require "hirak/prestissimo:^0.3"
+RUN apk --update add supervisor nodejs nodejs-npm bash git openssl-dev g++ autoconf make
+RUN npm install --global yarn && \
+    composer global require "hirak/prestissimo:^0.3"
+
+# Install mongo
+RUN pecl install mongodb
+RUN echo "extension=mongodb.so" > /usr/local/etc/php/conf.d/mongodb.ini
+RUN apk del --no-cache autoconf g++ make
