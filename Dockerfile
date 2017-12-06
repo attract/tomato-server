@@ -3,7 +3,7 @@ FROM attractgrouphub/alpine-php7-nginx-composer:1.0
 MAINTAINER Amondar
 
 RUN apk --update add supervisor nodejs bash git openssl-dev g++ autoconf make curl
-RUN npm install npm@latest -g && \
+RUN npm install -g npm && \
     npm install --global yarn && \
     composer global require "hirak/prestissimo:^0.3"
 
