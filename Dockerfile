@@ -8,6 +8,6 @@ RUN npm install --global gulp && \
     composer global require "hirak/prestissimo:^0.3"
 
 # Install mongo
-RUN pecl install mongodbgulp
+RUN pecl install mongodb
 RUN echo "extension=mongodb.so" > /usr/local/etc/php/conf.d/mongodb.ini
 RUN apk del --no-cache autoconf
