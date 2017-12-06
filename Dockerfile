@@ -9,4 +9,4 @@ RUN npm install --global yarn && \
 # Install mongo
 RUN pecl install mongodb
 RUN echo "extension=mongodb.so" > /usr/local/etc/php/conf.d/mongodb.ini
-RUN apk del --no-cache autoconf g++ make
+RUN apk del --no-cache autoconf g++
