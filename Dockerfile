@@ -8,7 +8,7 @@ RUN apk upgrade --no-cache -U \
     && apk --update add supervisor bash git openssl-dev g++ gcc libgcc  autoconf curl \
         file imagemagick imagemagick-dev libtool
 
-RUN apk add --no-cache libstdc++
+RUN apk add --no-cache libstdc++ \
     && apk add --no-cache --virtual .build-deps \
         binutils-gold \
         curl \
