@@ -3,7 +3,7 @@ FROM attractgrouphub/alpine-php7-nginx-composer:1.13-nginx-extra
 MAINTAINER Amondar
 
 RUN apk --update add supervisor nodejs bash git openssl-dev g++ autoconf make curl \
-        file imagemagick imagemagick-dev
+        file imagemagick imagemagick-dev libtool
 RUN pecl install imagick
 RUN docker-php-ext-enable imagick
 RUN npm install --global gulp && \
