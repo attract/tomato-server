@@ -2,7 +2,8 @@ FROM attractgrouphub/alpine-php7-nginx-composer:1.13-nginx-extra
 
 MAINTAINER Amondar
 
-RUN apk --update add supervisor nodejs bash git openssl-dev g++ autoconf make curl
+RUN apk --update add supervisor nodejs bash git openssl-dev g++ autoconf make curl imagemagick php7-pecl-imagick
+RUN docker-php-ext-enable imagick
 RUN npm install --global gulp && \
     npm install --global yarn && \
     composer global require "hirak/prestissimo:^0.3"
