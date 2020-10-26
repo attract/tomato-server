@@ -1,4 +1,4 @@
-FROM attractgrouphub/alpine-php7-nginx-composer:1.13-nginx-extra
+FROM attractgrouphub/alpine-php7-nginx-composer:1.5
 
 MAINTAINER Amondar
 
