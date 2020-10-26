@@ -25,6 +25,7 @@ ENV PHP_UPLOAD_MAX_SIZE 512M
 ENV PHP_SMTP localhost
 ENV PHP_SMTP_PORT 25
 ENV PHP_EXTRA_CONFIGURE_ARGS --enable-fpm --with-fpm-user=root --with-fpm-group=root
+ENV COMPOSER_MEMORY_LIMIT -1
 
 
 EXPOSE 80
