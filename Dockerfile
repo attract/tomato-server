@@ -2,7 +2,7 @@ FROM attractgrouphub/alpine-php7-nginx-composer:1.15
 
 MAINTAINER Amondar
 
-RUN apk --update add supervisor nodejs bash git openssl-dev g++ autoconf make curl \
+RUN apk --update add supervisor nodejs=10.19.0-r0 bash git openssl-dev g++ autoconf make curl \
         file imagemagick imagemagick-dev libtool
 RUN pecl install imagick
 RUN docker-php-ext-enable imagick
